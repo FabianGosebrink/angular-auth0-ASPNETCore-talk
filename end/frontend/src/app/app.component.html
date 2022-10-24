@@ -1,0 +1,20 @@
+<div *ngIf="isAuthenticated; else noAuth">
+  <button (click)="logout()">Logout</button>
+  <button (click)="getData()">Get Data</button>
+
+  Is Authenticated: {{ isAuthenticated | json }}
+
+  <pre>
+    {{ userData | json }}
+  </pre>
+
+  <pre>
+    {{ data | json }}
+  </pre>
+
+  <img [src]="userData?.picture" />
+</div>
+
+<ng-template #noAuth>
+  <button (click)="login()">Login</button>
+</ng-template>
