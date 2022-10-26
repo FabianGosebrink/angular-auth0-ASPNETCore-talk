@@ -5,7 +5,7 @@ namespace SecureApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    //[Authorize("access:api")]
+    [Authorize("access:api")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -20,21 +20,15 @@ namespace SecureApi.Controllers
             _logger = logger;
         }
 
-        // [HttpGet]
-        // [Route("testGet")]
-        // public IEnumerable<WeatherForecast> TestRouteGet()
-        // {
-        //     return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        //     {
-        //         Date = DateTime.Now.AddDays(index),
-        //         TemperatureC = Random.Shared.Next(-20, 55),
-        //         Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        //     })
-        //     .ToArray();
-        // }
+        [HttpGet]
+        [Route("testGet")]
+        public ActionResult TestRouteGet()
+        {
+            return Ok("Hello IJS");
+        }
 
         [HttpGet]
-        // [Authorize("read:weather")]
+        [Authorize("read:weather")]
         public IEnumerable<WeatherForecast> WeatherForecast()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
