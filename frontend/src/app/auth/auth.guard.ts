@@ -11,7 +11,7 @@ export const isAuthenticated = () => {
     take(1),
     map(({ isAuthenticated }) => {
       if (!isAuthenticated) {
-        router.parseUrl('/unauthorized');
+        router.navigate(['/unauthorized']);
 
         return false;
       }
