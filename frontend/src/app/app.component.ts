@@ -1,20 +1,15 @@
+import { JsonPipe, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { LoginResponse, OidcSecurityService } from 'angular-auth-oidc-client';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { NgIf, JsonPipe } from '@angular/common';
+import { LoginResponse, OidcSecurityService } from 'angular-auth-oidc-client';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    standalone: true,
-    imports: [
-        NgIf,
-        RouterLink,
-        RouterOutlet,
-        JsonPipe,
-    ],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [NgIf, RouterLink, RouterOutlet, JsonPipe],
 })
 export class AppComponent implements OnInit {
   title = 'auth0-angular';
@@ -44,7 +39,7 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
-    this.oidcSecurityService.logoff();
+    this.oidcSecurityService.logoff().subscribe();
   }
 
   getData() {
