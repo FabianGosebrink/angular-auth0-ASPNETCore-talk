@@ -24,7 +24,7 @@ namespace SecureApi.Controllers
         [Route("testGet")]
         public ActionResult TestRouteGet()
         {
-            return Ok("Hello IJS");
+            return Ok("Hello World!!!");
         }
 
         [HttpGet]

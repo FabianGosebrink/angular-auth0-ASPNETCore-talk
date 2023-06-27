@@ -42,6 +42,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
          };
      });
 
+// builder.Services.AddAuthorization();
+
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("access:api", policy =>

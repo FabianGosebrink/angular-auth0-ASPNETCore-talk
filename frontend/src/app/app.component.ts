@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
 
   getData() {
     this.httpClient
-      .get<any[]>('https://localhost:5001/weatherForecast/testget')
+      .get<any[]>('https://localhost:5001/weatherForecast')
       .subscribe((data) => {
         this.data = data;
       });
