@@ -8,8 +8,8 @@ describe('ProtectedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProtectedComponent ]
-    })
+    imports: [ProtectedComponent]
+})
     .compileComponents();
   });
 

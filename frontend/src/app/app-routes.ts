@@ -4,7 +4,7 @@ import { AuthorizationGuard } from './auth/auth.guard';
 import { ProtectedComponent } from './protected/protected.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 
-const routes: Routes = [
+export const APP_ROUTES: Routes = [
   {
     component: ProtectedComponent,
     path: 'protected',
@@ -15,9 +15,3 @@ const routes: Routes = [
     path: 'unauthorized',
   },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
